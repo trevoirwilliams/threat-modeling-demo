@@ -54,31 +54,31 @@ Headers: Authorization: Bearer <token>
 Login as user:
 
 ```bash
-curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d '{"email":"user@example.com","password":"password"}'
+curl -X POST https://localhost:5001/api/auth/login -H "Content-Type: application/json" -d '{"email":"user@example.com","password":"password"}'
 ```
 
 Login as admin:
 
 ```bash
-curl -X POST http://localhost:5000/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com","password":"password"}'
+curl -X POST https://localhost:5001/api/auth/login -H "Content-Type: application/json" -d '{"email":"admin@example.com","password":"password"}'
 ```
 
 Create order (replace <token>):
 
 ```bash
-curl -X POST http://localhost:5000/api/orders -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -d '{"totalAmount":99.95}'
+curl -X POST https://localhost:5001/api/orders -H "Content-Type: application/json" -H "Authorization: Bearer <token>" -d '{"totalAmount":99.95}'
 ```
 
 Get an order by id (INTENTIONALLY INSECURE):
 
 ```bash
-curl http://localhost:5000/api/orders/<order-id> -H "Authorization: Bearer <token>"
+curl https://localhost:5001/api/orders/<order-id> -H "Authorization: Bearer <token>"
 ```
 
 Get all orders as admin:
 
 ```bash
-curl http://localhost:5000/api/admin/orders -H "Authorization: Bearer <token>"
+curl https://localhost:5001/api/admin/orders -H "Authorization: Bearer <token>"
 ```
 
 
