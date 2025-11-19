@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZIM0MlAbaug=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Trevoir\\OneDrive\\Courses\\Secure Coding in C# and .NET\\threat-modeling-demo\\OrderManagementApi\\OrderManagementApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Trevoir\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
+    "C:\\Users\\Trevoir\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Trevoir\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.0\\microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",
+    "C:\\Users\\Trevoir\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.0\\microsoft.entityframeworkcore.inmemory.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,54 @@
+@host = https://localhost:5001
+@userToken = e0c158cc-188d-4d6a-825f-2b3db049f9a2
+@adminToken = f6be1f7b-e972-477e-984c-828c951c69cc
+@orderId = 00000000-0000-0000-0000-000000000000
+
+### Info
+# This file contains example requests for the intentionally insecure OrderManagementApi.
+# Start the API first:
+#   dotnet run
+# Note: Your port may differ. Update @host above accordingly.
+
+### Login as regular user (captures {{userToken}})
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password"
+}
+
+### Login as admin (captures {{adminToken}})
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin@example.com",
+  "password": "password"
+}
+
+### Create an order as the current user (captures {{orderId}})
+POST {{host}}/api/orders
+Content-Type: application/json
+Authorization: Bearer {{userToken}}
+
+{
+  "totalAmount": 99.95,
+  "status": "New"
+}
+
+### Get a specific order by id (INTENTIONALLY INSECURE: no ownership check)
+GET {{host}}/api/orders/{{orderId}}
+Authorization: Bearer {{userToken}}
+
+### Get my orders (filters by current user)
+GET {{host}}/api/orders
+Authorization: Bearer {{userToken}}
+
+### Admin: get all orders (INTENTIONALLY INSECURE: only checks authentication)
+GET {{host}}/api/admin/orders
+Authorization: Bearer {{userToken}}
+
+### Admin: delete an order by id (no extra safety checks)
+DELETE {{host}}/api/admin/orders/{{orderId}}
+Authorization: Bearer {{adminToken}}
